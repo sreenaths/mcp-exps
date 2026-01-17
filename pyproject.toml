@@ -1,0 +1,49 @@
+[project]
+name = "mcp-exps"
+version = "0.1.0"
+description = "A collection of experimental scripts exploring Model Context Protocol (MCP) frameworks, patterns, integrations, and tooling behavior."
+authors = [{ name = "Sreenath Somarajapuram", email = "somarajapuram@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Framework :: AsyncIO",
+    "Topic :: Software Development :: Libraries",
+]
+
+dependencies = [
+    "minimcp==0.4.1",
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.3.0",
+    "pre-commit-uv>=4.1.4",
+    "pyright>=1.1.403",
+    "ruff>=0.12.8",
+]
+
+[project.urls]
+Repository = "https://github.com/sreenaths/mcp-exps"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+exclude = ["README.md", "venv", ".venv"]
+
+[tool.ruff.lint]
+select = ["C4", "E", "F", "I", "PERF", "UP"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.markdown.lint]
+MD029 = false
+MD013 = false
+MD033 = false
+MD041 = false
